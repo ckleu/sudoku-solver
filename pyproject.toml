@@ -1,0 +1,42 @@
+[project]
+name = "sudoku-solver"
+version = "1.0.0"
+description = "A Sudoku solver with constraint propagation and backtracking search."
+authors = [
+    {name = "Christo Kleu"},
+]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "html5lib",
+]
+
+[project.urls]
+Homepage = "https://github.com/ckleu/sudoku-solver"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-timeout",
+]
+lint = [
+    "ruff",
+    "pre-commit",
+]
+
+[project.scripts]
+sudoku = "src.sudoku_solver:main"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+# Enable flake8 (E, F, W), and isort (I) rules.
+select = ["E", "F", "W", "I"]
